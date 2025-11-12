@@ -1,26 +1,16 @@
 import "./globals.css";
 import Link from "next/link";
-import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
 
-const myFont = localFont({
-  src: [
-    {
-      path: "../fonts/Poppins-Bold.ttf",
-      weight: "600",
-      style: "bold",
-    },
-    {
-      path: "../fonts/Poppins-Light.ttf",
-      weight: "200",
-      style: "light",
-    },
-  ],
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["200", "400", "700"],
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={poppins.className}>
         <header>
           <nav>
             <Link className="nav-link" href="/">
