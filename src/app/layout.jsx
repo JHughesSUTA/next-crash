@@ -1,10 +1,26 @@
 import "./globals.css";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+  src: [
+    {
+      path: "../fonts/Poppins-Bold.ttf",
+      weight: "600",
+      style: "bold",
+    },
+    {
+      path: "../fonts/Poppins-Light.ttf",
+      weight: "200",
+      style: "light",
+    },
+  ],
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={myFont.className}>
         <header>
           <nav>
             <Link className="nav-link" href="/">
